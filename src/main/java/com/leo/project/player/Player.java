@@ -25,7 +25,7 @@ public class Player {
 	// messages received in total
 	private int counter = 0;
 	// cache message received
-	private String receiveText = "";
+	private String receivedText = "";
 
 	public Player(String name, String host, int port) {
 		this.name = name;
@@ -112,8 +112,8 @@ public class Player {
 						e.printStackTrace();
 					}
 					if (count > 0) {
-						receiveText = new String(rBuffer.array(), 0, count);
-						System.out.println(receiveText);
+						receivedText = new String(rBuffer.array(), 0, count);
+						System.out.println(receivedText);
 						counter++;
 					}
 				}
@@ -128,7 +128,7 @@ public class Player {
 	}
 
 	public String getReceiveText() {
-		return receiveText;
+		return receivedText;
 	}
 	
 	public String getName() {
